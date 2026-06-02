@@ -1,9 +1,13 @@
 <?php
 namespace App\Repository;
 
+use App\Http\Traits\AttachFilesTrait;
+use App\Models\Grade;
 use App\Models\Library;
 
 class LibraryRepository implements LibraryRepositoryInterface{
+
+    use AttachFilesTrait;
     // index
     public function index(){
         $books = Library::all();
@@ -11,17 +15,80 @@ class LibraryRepository implements LibraryRepositoryInterface{
     }
 
      // create
-    public function create(){}
+    public function create(){
+        $grades = Grade::all();
+        return view('libraries.create',compact('grades'));
+    }
 
      // store
-    public function store($request){}
+    public function store($request){
+        try {
+            $books = new Library();
+            $books->title = $request->title;
+            $books->file_name =  $request->file('file_name')->getClientOriginalName();
+            $books->grade_id = $request->grade_id;
+            $books->classroom_id = $request->classroom_id;
+            $books->section_id = $request->section_id;
+            $books->teacher_id = 1;
+            $books->save();
+            $this->uploadFile($request,'file_name');
+
+            toastr()->success(trans('message.success'));
+            return redirect()->route('library.create');
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
+    }
 
      // edit
-    public function edit($id){}
+    public function edit($id){
+        $grades = Grade::all();
+        $book = Library::findorFail($id);
+        return view('libraries.edit',compact('book','grades'));
+    }
 
      // update
-    public function update($request){}
+    public function update($request){
+        try {
+
+            $book = Library::findorFail($request->id);
+            $book->title = $request->title;
+
+            if($request->hasfile('file_name')){
+
+                $this->deleteFile($book->file_name);
+
+                $this->uploadFile($request,'file_name');
+
+                $file_name_new = $request->file('file_name')->getClientOriginalName();
+                $book->file_name = $book->file_name !== $file_name_new ? $file_name_new : $book->file_name;
+            }
+
+            $book->grade_id = $request->grade_id;
+            $book->classroom_id = $request->classroom_id;
+            $book->section_id = $request->section_id;
+            $book->teacher_id = 1;
+            dd($request->all());
+            $book->save();
+            toastr()->success(trans('message.update'));
+            return redirect()->route('library.index');
+        } catch (\Exception $e) {
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
+    }
 
      // destroy
-    public function destroy($request){}
+    public function destroy($request){
+        $this->deleteFile($request->file_name);
+        library::destroy($request->id);
+        toastr()->error(trans('message.delete'));
+        return redirect()->route('library.index');
+    }
+
+
+
+    public function download($filename)
+    {
+        return response()->download(public_path('attachments/library/'.$filename));
+    }
 }

@@ -20,4 +20,6 @@ interface LibraryRepositoryInterface{
      // destroy
     public function destroy($request);
 
+    public function download($filename);
+
 }

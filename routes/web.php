@@ -133,6 +133,8 @@ Route::group(
 
 		// library
 		Route::resource('library',LibraryController::class);
+		// download file
+		Route::get('downloadAttachment/{filename}',[LibraryController::class,'downloadAttachment'])->name('downloadAttachment');
 
 	}   
 );

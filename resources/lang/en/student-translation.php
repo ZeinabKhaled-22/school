@@ -1,0 +1,36 @@
+<?php
+
+return [
+
+    'personal_information' => 'Personal information',
+    'name' => 'Name',
+    'name_ar' => 'Name_ar',
+    'name_en' => 'Name_en',
+    'email' => 'Email',
+    'password' => 'Password',
+    'gender' => 'Gender',
+    'nationality' => 'Nationality',
+    'blood_type' => 'Blood type',
+    'date_of_birth' => 'Date of Birth',
+    'student_information' => 'Student information',
+    'grade' => 'Grade',
+    'classrooms' => 'Classrooms',
+    'section' => 'Section',
+    'parent' => 'Parent',
+    'academic_year' => 'Academic year',
+    'processes' => 'Processes',
+    'submit' => 'Submit',
+    'close' => 'Close',
+    'attachments' => 'Attachments',
+    'student_details' => 'Student Details',
+    'student_edit' => 'Student Edit',
+    'deleted_student' => 'Delete student data',
+    'deleted_student_title' => 'Are you sure to delete the student ?',
+    'delete_attachment' => 'Delete_attachment',
+    'delete_attachment_title' => 'Are you sure to delete the attachment?',
+    'filename' => 'Filename',
+    'created_at' => 'Created at',
+    'download' => 'Download',
+    'delete' => 'Delete',
+
+];

@@ -29,7 +29,8 @@ class DatabaseSeeder extends Seeder
         SpecializationSeeder::class,
         GenderSeeder::class,
         ParentSeeder::class,
-        StudentSeeder::class
+        StudentSeeder::class,
+        SettingSeeder::class
        ]);
     }
 }

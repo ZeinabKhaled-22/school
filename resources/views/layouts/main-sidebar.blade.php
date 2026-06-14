@@ -161,17 +161,7 @@
                     </li>
                     <!-- setting item Authentication-->
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#authentication">
-                            <div class="pull-left"><i class="ti-id-badge"></i><span
-                                    class="right-nav-text">{{ trans('main-translation.Settings') }}</span></div>
-                            <div class="pull-right"><i class="ti-plus"></i></div>
-                            <div class="clearfix"></div>
-                        </a>
-                        <ul id="authentication" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="login.html">login</a> </li>
-                            <li> <a href="register.html">register</a> </li>
-                            <li> <a href="lockscreen.html">Lock screen</a> </li>
-                        </ul>
+                       <a href="{{ route('setting.index') }}"><i class="fas fa-cogs"></i><span class="right-nav-next">{{ trans('main-translation.Settings') }}</span></a>
                     </li>
                     <!-- menu item maps-->
                     <li>

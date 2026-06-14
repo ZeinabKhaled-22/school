@@ -136,6 +136,9 @@ Route::group(
 		// download file
 		Route::get('downloadAttachment/{filename}',[LibraryController::class,'downloadAttachment'])->name('downloadAttachment');
 
+		// setting
+		Route::resource('setting',SettingController::class);
+
 	}   
 );
 

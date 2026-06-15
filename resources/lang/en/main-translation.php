@@ -57,7 +57,12 @@ return [
     'number_of_teacher' => 'Number of Teachers',
     'number_of_parent' => 'Number of Parents',
     'number_of_section' => 'Number of Sections',
-    'last_operation' => 'Last Operation'
+    'last_operation' => 'Last Operation',
+    'son' => 'Sons',
+    'report_fee' => 'Report Fee',
+    'profile' => 'Profile',
+    'report' => 'Report',
+    'report_exams' => 'Report Exam'
     
     
     

@@ -1,6 +1,7 @@
 <?php
 
 use Livewire\Component;
+use App\Models\Event;
 
 new class extends Component {
     public $events = '';
@@ -30,7 +31,7 @@ new class extends Component {
         $eventdata->save();
     }
 };
-?>
+?> 
 
 <div>
     <div>
@@ -99,4 +100,4 @@ new class extends Component {
             <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.3.1/main.min.css' rel='stylesheet' />
         @endpush
     </div>
-</div>
+</div> --}}

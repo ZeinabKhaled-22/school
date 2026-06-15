@@ -61,6 +61,11 @@ return [
     'number_of_parent' => 'عدد اولياء الامور',
     'number_of_section' => 'عدد الفصول الدراسية',
     'last_operation' => 'اخر عمليات على النظام',
+    'son' => 'الابناء',
+    'report_fee' => 'تقرير المالية',
+    'profile' => 'الملف الشخصي',
+    'report' => 'التقارير',
+    'report_exams' => 'تقرير الامتحانات'
    
 
 ];

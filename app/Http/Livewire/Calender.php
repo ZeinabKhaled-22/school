@@ -3,7 +3,6 @@
 namespace App\Http\Livewire;
 
 use App\Models\Event;
-use Flasher\Laravel\Http\Response;
 use Livewire\Component;
 
 class Calendar extends Component

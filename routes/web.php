@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\GradeController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
@@ -22,16 +23,21 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 // routes/web.php
 
 
-Auth::routes();
+//Auth::routes();
 
+Route::get('/', [HomeController::class, 'index'])->name('selection');
 
-Route::group(['middleware' => 'guest'], function () {
-	Route::get('/', function () {
-		return view('auth.login');
-	});
+//auth
+Route::group(['namespace' => 'auth'],function(){
+	// login type
+	Route::get('/login/{type}',[LoginController::class,'loginForm'])->name('login.show');
+	// login
+	Route::post('/login',[LoginController::class,'login'])->name('login');
+	// logout
+	Route::get('/logout/{type}',[LoginController::class,'logout'])->name('logout');
+
 
 });
-
 
 
 // localize (language)
@@ -42,7 +48,7 @@ Route::group(
 	],
 	function () {
 		// auth
-		Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
+		Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
 
 
 		// grade

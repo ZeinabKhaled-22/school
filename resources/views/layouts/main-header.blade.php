@@ -106,8 +106,8 @@
                 <div class="dropdown-header">
                     <div class="media">
                         <div class="media-body">
-                            <h5 class="mt-0 mb-0">Michael Bean</h5>
-                            <span>michael-bean@mail.com</span>
+                            <h5 class="mt-0 mb-0">{{ Auth::user()->name }}</h5>
+                            <span>{{ Auth::user()->email }}</span>
                         </div>
                     </div>
                 </div>
@@ -119,7 +119,20 @@
                         class="badge badge-info">6</span> </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#"><i class="text-info ti-settings"></i>Settings</a>
-                <a class="dropdown-item" href="#"><i class="text-danger ti-unlock"></i>Logout</a>
+                {{-- <a class="dropdown-item" href="{{ route('logout') }}"><i class="text-danger ti-unlock"></i>{{ trans('main-translation.logout') }}</a> --}}
+                 @if(auth('student')->check())
+                    <form method="GET" action="{{ route('logout','student') }}">
+                        @elseif(auth('teacher')->check())
+                            <form method="GET" action="{{ route('logout','teacher') }}">
+                                @elseif(auth('parent')->check())
+                                    <form method="GET" action="{{ route('logout','parent') }}">
+                                        @else
+                                            <form method="GET" action="{{ route('logout','web') }}">
+                                                @endif
+
+                                                @csrf
+                                                <a class="dropdown-item" href="#" onclick="event.preventDefault();this.closest('form').submit();"><i class="bx bx-log-out"></i>{{ trans('main-translation.logout') }}</a>
+                                            </form>
             </div>
         </li>
     </ul>

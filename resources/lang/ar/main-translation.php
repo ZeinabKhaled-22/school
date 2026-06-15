@@ -3,7 +3,7 @@
 return [
 
    'Dashboard'=>'الرئيسية',
-    'Dashboard_page'=>'لوحة التحكم',
+    'Dashboard_student'=>'لوحة تحكم الطالب',
     'Main_title'=>'برنامج مورا سوفت لادارة المدارس',
     'Programname' => 'برنامج مورا سوفت لادارة المدارس',
     'change_language'=>'تغير اللغة',
@@ -51,7 +51,8 @@ return [
     'Settings'=>'الاعدادات',
     'Users'=>'المستخدمين',
     'Copyright' => 'جميع الحقوق محفوظة ',
-    'Name_Programer' => 'سمير جمال مورا سوفت'
+    'Name_Programer' => 'سمير جمال مورا سوفت',
+    'logout' => 'تسجيل الخروج'
    
 
 ];

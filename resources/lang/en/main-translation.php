@@ -3,7 +3,7 @@
 return [
 
     'Dashboard'=>'Dashboard',
-    'Dashboard_page'=>'Dashboard',
+    'Dashboard_student'=>'Dashboard Student',
     'Main_title' => 'MoraSoft School Management Program',
     'Programname' => 'MoraSoft School Management Program',
     'change_language'=>'language',
@@ -48,5 +48,6 @@ return [
     'Settings'=>'Settings',
     'Users'=>'Users',
     'Copyright' => 'Copyright',
-    'Name_Programer' => 'SamirGamal MoraSoft All Rights Reserved'
+    'Name_Programer' => 'SamirGamal MoraSoft All Rights Reserved',
+    'logout' => 'Logout'
 ];

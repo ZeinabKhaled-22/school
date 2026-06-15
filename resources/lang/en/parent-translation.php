@@ -38,6 +38,8 @@ return [
     'choose' => 'Choose',
     'attachments' => 'Attachments',
     'processes' => 'Processes',
+    'created_at' => 'created at',
+    'empty' => 'empty'
 
 
 ];

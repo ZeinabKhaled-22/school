@@ -4,6 +4,9 @@ return [
 
     'Dashboard'=>'Dashboard',
     'Dashboard_student'=>'Dashboard Student',
+    'Dashboard_teacher'=>'Dashboard Teacher',
+    'Dashboard_parent'=>'Dashboard Parent',
+    'Dashboard_admin'=>'Dashboard Admin',
     'Main_title' => 'MoraSoft School Management Program',
     'Programname' => 'MoraSoft School Management Program',
     'change_language'=>'language',
@@ -49,5 +52,13 @@ return [
     'Users'=>'Users',
     'Copyright' => 'Copyright',
     'Name_Programer' => 'SamirGamal MoraSoft All Rights Reserved',
-    'logout' => 'Logout'
-];
+    'logout' => 'Logout',
+    'number_of_student' => 'Number of Students',
+    'number_of_teacher' => 'Number of Teachers',
+    'number_of_parent' => 'Number of Parents',
+    'number_of_section' => 'Number of Sections',
+    'last_operation' => 'Last Operation'
+    
+    
+    
+    ];

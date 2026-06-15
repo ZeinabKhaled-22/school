@@ -4,6 +4,9 @@ return [
 
    'Dashboard'=>'الرئيسية',
     'Dashboard_student'=>'لوحة تحكم الطالب',
+    'Dashboard_admin'=>'لوحة تحكم الادمن',
+    'Dashboard_teacher'=>'لوحة تحكم المعلم',
+    'Dashboard_parent'=>'لوحة تحكم ولي الأمر',
     'Main_title'=>'برنامج مورا سوفت لادارة المدارس',
     'Programname' => 'برنامج مورا سوفت لادارة المدارس',
     'change_language'=>'تغير اللغة',
@@ -52,7 +55,12 @@ return [
     'Users'=>'المستخدمين',
     'Copyright' => 'جميع الحقوق محفوظة ',
     'Name_Programer' => 'سمير جمال مورا سوفت',
-    'logout' => 'تسجيل الخروج'
+    'logout' => 'تسجيل الخروج',
+    'number_of_student' => 'عدد الطلاب',
+    'number_of_teacher' => 'عدد المعلمين',
+    'number_of_parent' => 'عدد اولياء الامور',
+    'number_of_section' => 'عدد الفصول الدراسية',
+    'last_operation' => 'اخر عمليات على النظام',
    
 
 ];

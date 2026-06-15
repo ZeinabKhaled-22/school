@@ -14,5 +14,8 @@ return [
     'joining_date'=>'Joining Date',
     'address'=>'Address',
     'submit' => 'submit',
-    'delete' => 'delete'
+    'delete' => 'delete',
+    'created_at' => 'created at',
+    'empty' => 'empty'
+
 ];

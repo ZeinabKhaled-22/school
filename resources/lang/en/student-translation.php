@@ -32,5 +32,6 @@ return [
     'created_at' => 'Created at',
     'download' => 'Download',
     'delete' => 'Delete',
+    'empty' => 'empty'
 
 ];

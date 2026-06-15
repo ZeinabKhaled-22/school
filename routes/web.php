@@ -72,7 +72,7 @@ Route::group(
 
 
 		// parent
-		Route::view('parent', 'components.show-form');
+		Route::view('parent', 'components.show-form')->name('parent');
 
 
 		// teacher

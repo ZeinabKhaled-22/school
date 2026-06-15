@@ -32,6 +32,7 @@ return [
     'created_at' => 'تاريخ الاضافة',
     'download' => 'تحميل',
     'delete' => 'حذف',
+    'empty' => 'لا توجد بيانات'
 
 
 

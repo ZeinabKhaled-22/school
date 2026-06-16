@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Student;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -27,13 +28,10 @@ Route::group(
     //==============================dashboard============================
     Route::get('/teacher/dashboard', function () {
 
-        $ids = Teacher::findorFail(auth()->user()->id)->Sections()->pluck('section_id');
+        $ids = Teacher::findorFail(auth()->user()->id)->sections()->pluck('section_id');
         $data['count_sections']= $ids->count();
-        $data['count_students']= \App\Models\Student::whereIn('section_id',$ids)->count();
+        $data['count_students']= Student::whereIn('section_id',$ids)->count();
 
-//        $ids = DB::table('teacher_section')->where('teacher_id',auth()->user()->id)->pluck('section_id');
-//        $count_sections =  $ids->count();
-//        $count_students = DB::table('students')->whereIn('section_id',$ids)->count();
         return view('teachers.dashboard.dashboard',$data);
     });
 

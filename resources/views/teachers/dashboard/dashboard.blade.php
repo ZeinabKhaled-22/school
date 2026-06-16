@@ -51,7 +51,7 @@
             </div>
             <!-- widgets -->
             <div class="row" >
-                <div class="col-xl-3 col-lg-6 col-md-6 mb-30">
+                <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
                     <div class="card card-statistics h-100">
                         <div class="card-body">
                             <div class="clearfix">
@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="float-right text-right">
                                     <p class="card-text text-dark">{{ trans('main-translation.number_of_student') }}</p>
-                                    <h4>{{App\Models\Student::count()}}</h4>
+                                    <h4>{{ $count_students }}</h4>
                                 </div>
                             </div>
                             <p class="text-muted pt-3 mb-0 mt-2 border-top">
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 mb-30">
+                <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
                     <div class="card card-statistics h-100">
                         <div class="card-body">
                             <div class="clearfix">
@@ -81,48 +81,8 @@
                                     </span>
                                 </div>
                                 <div class="float-right text-right">
-                                    <p class="card-text text-dark">{{ trans('main-translation.number_of_teacher') }}</p>
-                                    <h4>{{App\Models\Teacher::count()}}</h4>
-                                </div>
-                            </div>
-                            <p class="text-muted pt-3 mb-0 mt-2 border-top">
-                                <i class="fas fa-binoculars mr-1" aria-hidden="true"></i><a href="{{route('teacher.index')}}" target="_blank"><span class="text-danger">عرض البيانات</span></a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 mb-30">
-                    <div class="card card-statistics h-100">
-                        <div class="card-body">
-                            <div class="clearfix">
-                                <div class="float-left">
-                                    <span class="text-success">
-                                        <i class="fas fa-user-tie highlight-icon" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-                                <div class="float-right text-right">
-                                    <p class="card-text text-dark">{{ trans('main-translation.number_of_parent') }}</p>
-                                    <h4>{{App\Models\MyParent::count()}}</h4>
-                                </div>
-                            </div>
-                            <p class="text-muted pt-3 mb-0 mt-2 border-top">
-                                <i class="fas fa-binoculars mr-1" aria-hidden="true"></i><a href="{{route('parent')}}" target="_blank"><span class="text-danger">عرض البيانات</span></a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 mb-30">
-                    <div class="card card-statistics h-100">
-                        <div class="card-body">
-                            <div class="clearfix">
-                                <div class="float-left">
-                                    <span class="text-primary">
-                                        <i class="fas fa-chalkboard highlight-icon" aria-hidden="true"></i>
-                                    </span>
-                                </div>
-                                <div class="float-right text-right">
                                     <p class="card-text text-dark">{{ trans('main-translation.number_of_section') }}</p>
-                                    <h4>{{App\Models\Section::count()}}</h4>
+                                    <h4>{{ $count_sections }}</h4>
                                 </div>
                             </div>
                             <p class="text-muted pt-3 mb-0 mt-2 border-top">
@@ -131,6 +91,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
             <!-- Orders Status widgets-->
 

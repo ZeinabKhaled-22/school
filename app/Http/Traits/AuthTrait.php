@@ -23,19 +23,19 @@ trait AuthTrait
         return $guardName;
     }
 
-    public function redirect($request){
 
-        if($request->type == 'student'){
-            return redirect()->intended(RouteServiceProvider::STUDENT);
-        }
-        elseif ($request->type == 'parent'){
-            return redirect()->intended(RouteServiceProvider::PARENT);
-        }
-        elseif ($request->type == 'teacher'){
-            return redirect()->intended(RouteServiceProvider::TEACHER);
-        }
-        else{
-            return redirect()->intended(RouteServiceProvider::HOME);
-        }
+    public function redirect($request){
+    if($request->type == 'student'){
+        return redirect(RouteServiceProvider::STUDENT);
     }
+    elseif ($request->type == 'parent'){
+        return redirect(RouteServiceProvider::PARENT);
+    }
+    elseif ($request->type == 'teacher'){
+        return redirect(RouteServiceProvider::TEACHER);
+    }
+    else{
+        return redirect(RouteServiceProvider::HOME);
+    }
+}
 }

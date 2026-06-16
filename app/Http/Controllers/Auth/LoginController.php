@@ -29,6 +29,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+
     }
 
 
@@ -38,23 +39,26 @@ class LoginController extends Controller
     }
 
     public function login(Request $request){
-
         if (Auth::guard($this->chekGuard($request))->attempt(['email' => $request->email, 'password' => $request->password])) {
+            
+        $request->session()->regenerate();
+
            return $this->redirect($request);
         }
         else{
             return redirect()->back()->with('message', 'يوجد خطا في كلمة المرور او اسم المستخدم');
         }
-
     }
 
     public function logout(Request $request,$type)
     {
-        Auth::guard($type)->logout();
 
-        $request->session()->invalidate();
+    Auth::guard('web')->logout();
+    Auth::guard('student')->logout();
+    Auth::guard('teacher')->logout();
+    Auth::guard('parent')->logout();
 
-        $request->session()->regenerateToken();
+    $request->session()->invalidate();
 
         return redirect('/');
     }

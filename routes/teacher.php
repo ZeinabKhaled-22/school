@@ -2,8 +2,6 @@
 
 use App\Models\Student;
 use App\Models\Teacher;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -27,14 +25,12 @@ Route::group(
 
     //==============================dashboard============================
     Route::get('/teacher/dashboard', function () {
-
         $ids = Teacher::findorFail(auth()->user()->id)->sections()->pluck('section_id');
         $data['count_sections']= $ids->count();
         $data['count_students']= Student::whereIn('section_id',$ids)->count();
 
         return view('teachers.dashboard.dashboard',$data);
     });
-
     // Route::group(['namespace' => 'teacher\dashboard'], function () {
     //     //==============================students============================
     //  Route::get('student','StudentController@index')->name('student.index');

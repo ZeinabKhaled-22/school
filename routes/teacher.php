@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\teacher\dashboard\QuestionDashboardController;
 use App\Http\Controllers\teacher\dashboard\QuizzDashboardController;
 use App\Http\Controllers\teacher\dashboard\StudentDashboardController;
 use App\Models\Student;
@@ -50,7 +51,7 @@ Route::group(
 		Route::get('/get_classroom/{id}', [QuizzDashboardController::class,'getClassroom']);
 	// get section
 		Route::get('/get_section/{id}', [QuizzDashboardController::class,'getSection']);
-    //  Route::resource('questions', 'QuestionController');
+     Route::resource('questions', QuestionDashboardController::class)->names('questions');
     //  Route::resource('online_zoom_classes', 'OnlineZoomClassesController');
     //  Route::get('/indirect', 'OnlineZoomClassesController@indirectCreate')->name('indirect.teacher.create');
     //  Route::post('/indirect', 'OnlineZoomClassesController@storeIndirect')->name('indirect.teacher.store');

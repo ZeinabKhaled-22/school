@@ -5,6 +5,7 @@ namespace App\Http\Controllers\teacher\dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Classroom;
 use App\Models\Grade;
+use App\Models\Question;
 use App\Models\Quizz;
 use App\Models\Section;
 use App\Models\Subject;
@@ -44,7 +45,6 @@ class QuizzDashboardController extends Controller
             $quizzes->classroom_id = $request->classroom_id;
             $quizzes->section_id = $request->section_id;
             $quizzes->teacher_id = auth()->user()->id;
-            $quizzes->save();
             toastr()->success(trans('message.success'));
             return redirect()->route('quizzes.create');
         }
@@ -56,9 +56,11 @@ class QuizzDashboardController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $questions = Question::where('quizz_id',$id)->get();
+        $quizz = Quizz::findorFail($id);
+        return view('teachers.dashboard.question.index',compact('questions','quizz'));
     }
 
     /**

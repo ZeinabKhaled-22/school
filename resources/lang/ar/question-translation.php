@@ -11,5 +11,7 @@ return[
     'edit_question' => 'تعديل سؤال',
    'warning_question' => 'هل انت متاكد من عملية الحذف ؟',
     'submit' => 'تأكيد',
-    'close' => 'غلق'
+    'close' => 'غلق',
+    'select_score' => 'حدد الدرجة',
+    'delete_question' => 'حذف سؤال',
 ];

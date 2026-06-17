@@ -11,5 +11,7 @@ return[
     'edit_question' => 'Edit Question',
    'warning_question' =>  'Are Sure Of The Deleting Process ?',
     'submit' => 'Submit',
-    'close' => 'Close'
+    'close' => 'Close',
+    'select_score' => 'select score',
+    'delete_question' => 'delete question'
 ];

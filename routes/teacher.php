@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\StudentController;
+use App\Http\Controllers\teacher\dashboard\QuizzDashboardController;
 use App\Http\Controllers\teacher\dashboard\StudentDashboardController;
 use App\Models\Student;
 use App\Models\Teacher;
@@ -34,15 +34,22 @@ Route::group(
         return view('teachers.dashboard.dashboard',$data);
     });
 
-     Route::group(['namespace' => 'teacher\dashboard'], function () {
+     Route::group([['namespace' => 'teacher\dashboard']], function () {
         //==============================students============================
      Route::get('students',[StudentDashboardController::class,'index'])->name('students.index');
+
      Route::get('sections',[StudentDashboardController::class,'sections'])->name('sections.index');
+
      Route::post('attendances',[StudentDashboardController::class,'attendance'])->name('attendances');
      Route::post('edit_attendance',[StudentDashboardController::class,'editAttendance'])->name('attendance.edit');
      Route::get('attendance_report',[StudentDashboardController::class,'attendanceReport'])->name('attendance.report');
      Route::post('attendance_report',[StudentDashboardController::class,'attendanceSearch'])->name('attendance.search');
-    //  Route::resource('quizzes', 'QuizzController');
+
+     Route::resource('quizzes', QuizzDashboardController::class)->names('quizzes');
+     // get Classroom
+		Route::get('/get_classroom/{id}', [QuizzDashboardController::class,'getClassroom']);
+	// get section
+		Route::get('/get_section/{id}', [QuizzDashboardController::class,'getSection']);
     //  Route::resource('questions', 'QuestionController');
     //  Route::resource('online_zoom_classes', 'OnlineZoomClassesController');
     //  Route::get('/indirect', 'OnlineZoomClassesController@indirectCreate')->name('indirect.teacher.create');

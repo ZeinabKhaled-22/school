@@ -16,11 +16,12 @@ return [
    'class_name' => 'الصف الدراسي',
    'teacher_name' => 'اسم المعلم',
    'section_name' => 'القسم الدراسي',
+   'select_subject' => 'حدد المادة الدراسية',
    'subject_name' => 'اسم المادة',
    'processes' => 'العمليات',
    'edit' => 'تعديل',
    'delete' => 'حذف',
-   'delete_quizz' => 'حذف امتحان',
+   'delete_quizz' => 'حذف اختبار',
    'close' => 'اغلاق',
 
 

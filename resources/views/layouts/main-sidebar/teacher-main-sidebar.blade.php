@@ -31,12 +31,11 @@
                 <div class="clearfix"></div>
             </a>
             <ul id="sections-menu" class="collapse" data-parent="#sidebarnav">
-                <li><a href="#">{{ trans('main-translation.list_quizz') }}</a></li>
+                <li><a href="{{ route('quizzes.index') }}">{{ trans('main-translation.list_quizz') }}</a></li>
                 <li><a href="#">{{ trans('main-translation.list_question') }}</a></li>
             </ul>
 
         </li>
-{{-- {{route('quizzes.index')}} --}}
 
         <!-- Online classes-->
         <li>

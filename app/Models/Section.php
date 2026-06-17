@@ -26,4 +26,8 @@ class Section extends Model
         return $this->belongsToMany(Teacher::class,'teacher_section');
     }
 
+    public function grades(){
+        return $this->belongsToMany(Grade::class,'grade_id');
+    }
+
 }

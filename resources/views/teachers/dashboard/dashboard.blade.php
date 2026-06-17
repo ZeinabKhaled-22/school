@@ -41,7 +41,7 @@
             <div class="page-title" >
                 <div class="row">
                     <div class="col-sm-6" >
-                        <h4 class="mb-0" style="font-family: 'Cairo', sans-serif">{{ trans('main-translation.Dashboard_teacher') }}</h4>
+                        <h4 class="mb-0" style="font-family: 'Cairo', sans-serif">{{ trans('main-translation.Dashboard_teacher') }}: {{ auth()->user()->name }}</h4>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right">
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                             <p class="text-muted pt-3 mb-0 mt-2 border-top">
-                                <i class="fas fa-binoculars mr-1" aria-hidden="true"></i><a href="{{route('student.index')}}" target="_blank"><span class="text-danger">عرض البيانات</span></a>
+                                <i class="fas fa-binoculars mr-1" aria-hidden="true"></i><a href="{{route('students.index')}}" target="_blank"><span class="text-danger">{{ trans('main-translation.show_data') }}</span></a>
                             </p>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                                 </div>
                             </div>
                             <p class="text-muted pt-3 mb-0 mt-2 border-top">
-                                <i class="fas fa-binoculars mr-1" aria-hidden="true"></i><a href="{{route('section.index')}}" target="_blank"><span class="text-danger">عرض البيانات</span></a>
+                                <i class="fas fa-binoculars mr-1" aria-hidden="true"></i><a href="{{route('sections.index')}}" target="_blank"><span class="text-danger">عرض البيانات</span></a>
                             </p>
                         </div>
                     </div>
@@ -222,7 +222,7 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                @forelse(app\Models\MyParent::latest()->take(5)->get() as $parent)
+                                                @forelse(App\Models\MyParent::latest()->take(5)->get() as $parent)
                                                     <tr>
                                                         <td>{{$loop->iteration}}</td>
                                                         <td>{{$parent->father_name}}</td>
@@ -257,7 +257,7 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                @forelse(app\Models\FeeInvoice::latest()->take(10)->get() as $fee_invoice)
+                                                @forelse(App\Models\FeeInvoice::latest()->take(10)->get() as $fee_invoice)
                                                     <tr>
                                                         <td>{{$loop->iteration}}</td>
                                                         <td>{{$fee_invoice->invoice_date}}</td>

@@ -32,7 +32,21 @@ return [
     'created_at' => 'تاريخ الاضافة',
     'download' => 'تحميل',
     'delete' => 'حذف',
-    'empty' => 'لا توجد بيانات'
+    'empty' => 'لا توجد بيانات',
+    'list_attendence_student' => 'قائمة الحضور والغياب للطلاب' ,
+    'date_today' => 'تاريخ اليوم',
+    'attendence' => 'الحضور والغياب',
+    'presence' => 'حضور',
+    'absence' => 'غياب',
+    'attendance_report' => 'تقرير الحضور والغياب',
+    'search' => 'معلومات البحث',
+    'student' => 'الطلاب',
+    'all' => 'الكل',
+    'start_date' => 'تاريخ البداية',
+    'end_date' => 'تاريخ النهائية',
+    'to_date' => 'إلى تاريخ',
+    'date' => 'التاريخ',
+    'status' => 'الحالة'
 
 
 

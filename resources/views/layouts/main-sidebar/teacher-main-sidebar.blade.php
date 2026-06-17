@@ -2,7 +2,7 @@
     <ul class="nav navbar-nav side-menu" id="sidebarnav">
         <!-- menu item Dashboard-->
         <li>
-            <a href="{{ url('/teacher/dashboard') }}">
+            <a href="{{ url('/teachers/dashboard') }}">
                 <div class="pull-left"><i class="ti-home"></i><span
                         class="right-nav-text">{{trans('main-translation.Dashboard_teacher')}}</span>
                 </div>
@@ -14,16 +14,14 @@
 
         <!-- الاقسام-->
         <li>
-            <a href="{{route('section')}}"><i class="fas fa-chalkboard"></i><span
+            <a href="{{route('sections.index')}}"><i class="fas fa-chalkboard"></i><span
                     class="right-nav-text">{{ trans('main-translation.sections') }}</span></a>
         </li>
-
         <!-- الطلاب-->
         <li>
-            <a href="{{route('student.index')}}"><i class="fas fa-user-graduate"></i><span
+            <a href="{{route('students.index')}}"><i class="fas fa-user-graduate"></i><span
                     class="right-nav-text">{{ trans('main-translation.students') }}</span></a>
         </li>
-
         <!-- الاختبارات-->
         <li>
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#sections-menu">
@@ -33,12 +31,12 @@
                 <div class="clearfix"></div>
             </a>
             <ul id="sections-menu" class="collapse" data-parent="#sidebarnav">
-                <li><a href="{{route('quizzes.index')}}">{{ trans('main-translation.list_quizz') }}</a></li>
+                <li><a href="#">{{ trans('main-translation.list_quizz') }}</a></li>
                 <li><a href="#">{{ trans('main-translation.list_question') }}</a></li>
             </ul>
 
         </li>
-
+{{-- {{route('quizzes.index')}} --}}
 
         <!-- Online classes-->
         <li>
@@ -48,10 +46,10 @@
                 <div class="clearfix"></div>
             </a>
             <ul id="Onlineclasses-icon" class="collapse" data-parent="#sidebarnav">
-                <li> <a href="{{route('online_zoom_classes.index')}}">{{ trans('main-translation.direct_integration') }}</a> </li>
+                <li> <a href="#">{{ trans('main-translation.direct_integration') }}</a> </li>
             </ul>
         </li>
-
+{{-- {{route('online_zoom_classes.index')}} --}}
 
 
         <!-- sections-->
@@ -71,9 +69,9 @@
 
         <!-- الملف الشخصي-->
         <li>
-            <a href="{{route('profile.show')}}"><i class="fas fa-id-card-alt"></i><span
+            <a href="#"><i class="fas fa-id-card-alt"></i><span
                     class="right-nav-text">{{ trans('main-translation.profile') }}</span></a>
         </li>
-
+{{-- {{route('profile.show')}} --}}
     </ul>
 </div>

@@ -62,7 +62,8 @@ return [
     'report_fee' => 'Report Fee',
     'profile' => 'Profile',
     'report' => 'Report',
-    'report_exams' => 'Report Exam'
+    'report_exams' => 'Report Exam',
+    'show_data' => 'show data'
     
     
     

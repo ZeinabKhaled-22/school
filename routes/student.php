@@ -23,7 +23,7 @@ Route::group(
     ], function () {
 
     //==============================dashboard============================
-    Route::get('/student/dashboard', function () {
+    Route::get('/students/dashboard', function () {
         return view('students.dashboard.dashboard');
     })->name('dashboard.student');
 

@@ -32,6 +32,20 @@ return [
     'created_at' => 'Created at',
     'download' => 'Download',
     'delete' => 'Delete',
-    'empty' => 'empty'
+    'empty' => 'empty',
+    'list_attendence_student' => 'List of Attendence for Student',
+    'date_today' => 'Date Today',
+    'attendence' => 'Attendence',
+    'presence' => 'presence',
+    'absence' => 'absence',
+    'attendance_report' => 'Attendance Report',
+    'search' => 'Search',
+    'student' => 'student',
+    'all' => 'all',
+    'start_date' => 'start date',
+    'end_date' => 'end date',
+    'to_date' => 'to date',
+    'date' => 'Date',
+    'status' => 'Status'
 
 ];

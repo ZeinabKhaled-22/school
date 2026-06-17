@@ -38,10 +38,10 @@ Route::group(
         //==============================students============================
      Route::get('students',[StudentDashboardController::class,'index'])->name('students.index');
      Route::get('sections',[StudentDashboardController::class,'sections'])->name('sections.index');
-     Route::post('attendance',[StudentDashboardController::class,'attendance'])->name('attendance');
+     Route::post('attendances',[StudentDashboardController::class,'attendance'])->name('attendances');
      Route::post('edit_attendance',[StudentDashboardController::class,'editAttendance'])->name('attendance.edit');
      Route::get('attendance_report',[StudentDashboardController::class,'attendanceReport'])->name('attendance.report');
-    //  Route::post('attendance_report','StudentController@attendanceSearch')->name('attendance.search');
+     Route::post('attendance_report',[StudentDashboardController::class,'attendanceSearch'])->name('attendance.search');
     //  Route::resource('quizzes', 'QuizzController');
     //  Route::resource('questions', 'QuestionController');
     //  Route::resource('online_zoom_classes', 'OnlineZoomClassesController');

@@ -74,10 +74,10 @@
                         @foreach($Students as $student)
                             <tr>
                                 <td>{{ $loop->index+1 }}</td>
-                                <td>{{$student->students->name}}</td>
+                                <td>{{$student->student->name}}</td>
                                 <td>{{$student->grade->name}}</td>
                                 <td>{{$student->section->name}}</td>
-                                <td>{{$student->attendence_date}}</td>
+                                <td>{{$student->attendance_date}}</td>
                                 <td>
 
                                     @if($student->attendence_status == 0)
@@ -87,7 +87,7 @@
                                     @endif
                                 </td>
                             </tr>
-                        @include('pages.Students.Delete')
+                        {{-- @include('pages.Students.Delete') --}}
                         @endforeach
                     </table>
                 </div>

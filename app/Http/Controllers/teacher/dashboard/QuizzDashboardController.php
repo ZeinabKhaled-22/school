@@ -110,20 +110,4 @@ class QuizzDashboardController extends Controller
     }
 
 
-    // get classroom
-    public function getClassroom($id)
-    {
-        $classroom_list = Classroom::where('grade_id', $id)->pluck('name', 'id');
-        return $classroom_list;
-
-    }
-
-    // get section
-    public function getSection($id)
-    {
-        $section_list = Section::where('classroom_id', $id)->pluck('name', 'id');
-        return $section_list;
-
-    }
-
 }

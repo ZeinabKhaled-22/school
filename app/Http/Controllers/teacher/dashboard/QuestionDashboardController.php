@@ -13,7 +13,7 @@ class QuestionDashboardController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**

@@ -47,10 +47,6 @@ Route::group(
      Route::post('attendance_report',[StudentDashboardController::class,'attendanceSearch'])->name('attendance.search');
 
      Route::resource('quizzes', QuizzDashboardController::class)->names('quizzes');
-     // get Classroom
-		Route::get('/get_classroom/{id}', [QuizzDashboardController::class,'getClassroom']);
-	// get section
-		Route::get('/get_section/{id}', [QuizzDashboardController::class,'getSection']);
      Route::resource('questions', QuestionDashboardController::class)->names('questions');
     //  Route::resource('online_zoom_classes', 'OnlineZoomClassesController');
     //  Route::get('/indirect', 'OnlineZoomClassesController@indirectCreate')->name('indirect.teacher.create');

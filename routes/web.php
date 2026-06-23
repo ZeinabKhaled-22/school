@@ -81,10 +81,6 @@ Route::group(
 
 		// student
 		Route::resource('student', StudentController::class);
-		// get Classroom
-		Route::get('/get_classroom/{id}', [StudentController::class,'getClassroom']);
-		// get section
-		Route::get('/get_section/{id}', [StudentController::class,'getSection']);
 		// upload images
 		Route::post('upload_attachment', [StudentController::class,'uploadAttachment'])->name('upload_attachment');
         // download Image

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\teacher\dashboard\ProfileController;
 use App\Http\Controllers\teacher\dashboard\QuestionDashboardController;
 use App\Http\Controllers\teacher\dashboard\QuizzDashboardController;
 use App\Http\Controllers\teacher\dashboard\StudentDashboardController;
@@ -48,11 +49,9 @@ Route::group(
 
      Route::resource('quizzes', QuizzDashboardController::class)->names('quizzes');
      Route::resource('questions', QuestionDashboardController::class)->names('questions');
-    //  Route::resource('online_zoom_classes', 'OnlineZoomClassesController');
-    //  Route::get('/indirect', 'OnlineZoomClassesController@indirectCreate')->name('indirect.teacher.create');
-    //  Route::post('/indirect', 'OnlineZoomClassesController@storeIndirect')->name('indirect.teacher.store');
-    //  Route::get('profile', 'ProfileController@index')->name('profile.show');
-    //  Route::post('profile/{id}', 'ProfileController@update')->name('profile.update');
+   
+     Route::get('profile', [ProfileController::class,'index'])->name('profile.show');
+     Route::post('profile/{id}', [ProfileController::class,'update'])->name('profile.update');
     //  Route::get('student_quizze/{id}','QuizzController@student_quizze')->name('student.quizze');
     //  Route::post('repeat_quizze', 'QuizzController@repeat_quizze')->name('repeat.quizze');
 

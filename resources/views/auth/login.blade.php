@@ -77,7 +77,7 @@ login-->
                             @csrf
 
                             <div class="section-field mb-20">
-                                <label class="mb-10" for="name">البريدالالكتروني*</label>
+                                <label class="mb-10" for="name">{{ trans('teacher-translation.email') }}</label>
                                 <input id="email" type="email"
                                        class="form-control @error('email') is-invalid @enderror" name="email"
                                        value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -91,7 +91,7 @@ login-->
                             </div>
 
                             <div class="section-field mb-20">
-                                <label class="mb-10" for="Password">كلمة المرور * </label>
+                                <label class="mb-10" for="Password">{{ trans('teacher-translation.password') }}</label>
                                 <input id="password" type="password"
                                        class="form-control @error('password') is-invalid @enderror" name="password"
                                        required autocomplete="current-password">
@@ -106,11 +106,11 @@ login-->
                             <div class="section-field">
                                 <div class="remember-checkbox mb-30">
                                     <input type="checkbox" class="form-control" name="two" id="two" />
-                                    <label for="two"> تذكرني</label>
-                                    <a href="#" class="float-right">هل نسيت كلمةالمرور ؟</a>
+                                    <label for="two">{{ trans('teacher-translation.remember_me') }}</label>
+                                    <a href="#" class="float-right">{{ trans('teacher-translation.forget_password') }}</a>
                                 </div>
                             </div>
-                            <button class="button"><span>دخول</span><i class="fa fa-check"></i></button>
+                            <button class="button"><span>{{ trans('teacher-translation.login') }}</span><i class="fa fa-check"></i></button>
                         </form>
                     </div>
                 </div>

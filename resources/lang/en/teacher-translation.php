@@ -16,6 +16,11 @@ return [
     'submit' => 'submit',
     'delete' => 'delete',
     'created_at' => 'created at',
-    'empty' => 'empty'
+    'empty' => 'empty',
+    'password_check' => 'show password',
+    'update' => 'update',
+    'forget_password' => 'forget password',
+    'remember_me' => 'remember me',
+    'login' => 'login'
 
 ];

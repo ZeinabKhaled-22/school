@@ -111,25 +111,25 @@
 
                                             <li class="nav-item">
                                                 <a class="nav-link active show" id="students-tab" data-toggle="tab"
-                                                   href="#student" role="tab" aria-controls="students"
+                                                   href="#students" role="tab" aria-controls="students"
                                                    aria-selected="true">{{ trans('main-translation.students') }}</a>
                                             </li>
 
                                             <li class="nav-item">
-                                                <a class="nav-link" id="teachers-tab" data-toggle="tab" href="#teacher"
-                                                   role="tab" aria-controls="teachers" aria-selected="false">{{ trans('main-translation.Teachers') }}
+                                                <a class="nav-link" id="teachers-tab" data-toggle="tab" href="#teachers"
+                                                   role="tab" aria-controls="teachers" aria-selected="true">{{ trans('main-translation.Teachers') }}
                                                 </a>
                                             </li>
 
                                             <li class="nav-item">
-                                                <a class="nav-link" id="parents-tab" data-toggle="tab" href="#parent"
-                                                   role="tab" aria-controls="parents" aria-selected="false">{{ trans('main-translation.Parents') }}
+                                                <a class="nav-link" id="parents-tab" data-toggle="tab" href="#parents"
+                                                   role="tab" aria-controls="parents" aria-selected="true">{{ trans('main-translation.Parents') }}
                                                 </a>
                                             </li>
 
                                             <li class="nav-item">
-                                                <a class="nav-link" id="fee_invoices-tab" data-toggle="tab" href="#fee_invoice"
-                                                   role="tab" aria-controls="fee_invoices" aria-selected="false">{{ trans('main-translation.fee_invoice') }}
+                                                <a class="nav-link" id="fee_invoices-tab" data-toggle="tab" href="#fee_invoices"
+                                                   role="tab" aria-controls="fee_invoices" aria-selected="true">{{ trans('main-translation.fee_invoice') }}
                                                 </a>
                                             </li>
 
@@ -250,7 +250,6 @@
                                                     <th>{{ trans('fee-invoice-translation.student_name') }}</th>
                                                     <th>{{ trans('fee-invoice-translation.grade') }}</th>
                                                     <th>{{ trans('fee-invoice-translation.classroom') }}</th>
-                                                    <th>{{ trans('fee-invoice-translation.section') }}</th>
                                                     <th>{{ trans('fee-invoice-translation.fee_type') }}</th>
                                                     <th>{{ trans('fee-invoice-translation.amount') }}</th>
                                                     <th>{{ trans('fee-invoice-translation.created_at') }}</th>
@@ -261,7 +260,11 @@
                                                     <tr>
                                                         <td>{{$loop->iteration}}</td>
                                                         <td>{{$fee_invoice->invoice_date}}</td>
+                                                        <td>{{$fee_invoice->student->name}}</td>
+                                                        <td>{{$fee_invoice->grade->name}}</td>
                                                         <td>{{$fee_invoice->classroom->name}}</td>
+                                                        <td>{{$fee_invoice->fee->title}}</td>
+                                                        <td>{{$fee_invoice->amount}}</td>
                                                         <td class="text-success">{{$fee_invoice->created_at}}</td>
                                                     </tr>
                                                 @empty

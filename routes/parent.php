@@ -33,8 +33,8 @@ Route::group(
     Route::group(['namespace' => 'parent\dashboard'], function () {
         Route::get('children', [ChildrenParentController::class,'index'])->name('sons.index');
         Route::get('results/{id}', [ChildrenParentController::class,'results'])->name('sons.results');
-        Route::get('attendances', 'ChildrenController@attendances')->name('sons.attendances');
-        Route::post('attendances','ChildrenController@attendanceSearch')->name('sons.attendance.search');
+        Route::get('attendances', [ChildrenParentController::class,'attendances'])->name('sons.attendances');
+        Route::post('attendances',[ChildrenParentController::class,'attendanceSearch'])->name('sons.attendance.search');
         Route::get('fees', 'ChildrenController@fees')->name('sons.fees');
         Route::get('receipt/{id}', 'ChildrenController@receiptStudent')->name('sons.receipt');
         Route::get('profile/parent', 'ChildrenController@profile')->name('profile.show.parent');

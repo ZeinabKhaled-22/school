@@ -40,10 +40,10 @@ class StudentExamController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($quizze_id)
+    public function show($quizz_id)
     {
         $student_id = Auth::user()->id;
-        return view('students.dashboard.exam.show',compact('quizze_id','student_id'));
+        return view('students.dashboard.exam.show',compact('quizz_id','student_id'));
     }
 
     /**

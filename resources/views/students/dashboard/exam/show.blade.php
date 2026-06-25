@@ -15,7 +15,8 @@
 @endsection
 @section('content')
 
-    @livewire('show-question',['quizze_id' => $quizze_id, 'student_id' => $student_id])
+
+    @livewire('show-question',['quizz_id' => $quizz_id , 'student_id' => $student_id])
 @endsection
 @section('js')
     @toastr_js

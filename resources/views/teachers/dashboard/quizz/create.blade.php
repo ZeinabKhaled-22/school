@@ -36,12 +36,12 @@
                                 <div class="form-row">
                                     <div class="col">
                                         <label for="title">{{ trans('quizz-translation.quizz_name_ar') }}</label>
-                                        <input type="text" name="Name_ar" class="form-control">
+                                        <input type="text" name="name_ar" class="form-control">
                                     </div>
 
                                     <div class="col">
                                         <label for="title">{{ trans('quizz-translation.quizz_name_en') }}</label>
-                                        <input type="text" name="Name_en" class="form-control">
+                                        <input type="text" name="name_en" class="form-control">
                                     </div>
                                 </div>
                                 <br>

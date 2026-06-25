@@ -22,19 +22,11 @@
             <a href="{{route('students.index')}}"><i class="fas fa-user-graduate"></i><span
                     class="right-nav-text">{{ trans('main-translation.students') }}</span></a>
         </li>
-        <!-- الاختبارات-->
-        <li>
-            <a href="javascript:void(0);" data-toggle="collapse" data-target="#sections-menu">
-                <div class="pull-left"><i class="fas fa-chalkboard"></i><span
-                        class="right-nav-text">{{ trans('main-translation.quizz') }}</span></div>
-                <div class="pull-right"><i class="ti-plus"></i></div>
-                <div class="clearfix"></div>
-            </a>
-            <ul id="sections-menu" class="collapse" data-parent="#sidebarnav">
-                <li><a href="{{ route('quizzes.index') }}">{{ trans('main-translation.list_quizz') }}</a></li>
-                <li><a href="#">{{ trans('main-translation.list_question') }}</a></li>
-            </ul>
 
+        <!-- الاختبارات-->
+         <li>
+            <a href="{{ route('quizzes.index') }}"><i class="fas fa-user-graduate"></i><span
+                    class="right-nav-text">{{ trans('main-translation.list_quizz') }}</span></a>
         </li>
 
         <!-- sections-->

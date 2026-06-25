@@ -38,7 +38,7 @@ class QuestionDashboardController extends Controller
             $question->quizz_id  = $request->quizz_id ;
             $question->save();
             toastr()->success(trans('message.success'));
-            return redirect()->back();
+            return redirect()->route('questions.index');
         } catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }

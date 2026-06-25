@@ -45,8 +45,9 @@ class QuizzDashboardController extends Controller
             $quizzes->classroom_id = $request->classroom_id;
             $quizzes->section_id = $request->section_id;
             $quizzes->teacher_id = auth()->user()->id;
+            $quizzes->save();
             toastr()->success(trans('message.success'));
-            return redirect()->route('quizzes.create');
+            return redirect()->route('quizzes.index');
         }
         catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);

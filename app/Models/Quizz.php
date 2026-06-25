@@ -33,5 +33,9 @@ class Quizz extends Model
         return $this->belongsTo(Section::class,'section_id');
     }
 
+    public function subject(){
+        return $this->belongsTo(Subject::class,'subject_id');
+    }
+
 
 }

@@ -23,6 +23,8 @@ return [
    'delete' => 'حذف',
    'delete_quizz' => 'حذف اختبار',
    'close' => 'اغلاق',
+   'score' => 'درجة الاختبار',
+   'show_quizz' => 'اجراء اختبار'
 
 
 

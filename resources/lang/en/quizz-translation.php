@@ -22,6 +22,8 @@ return [
    'delete_quizz' => 'Delete Quizz',
    'close' => 'Close',
    'select_subject' => 'select subject',
+   'score' => 'score',
+   'show_quizz' => 'show quizz'
 
 
 

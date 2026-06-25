@@ -15,10 +15,9 @@
 
         <!-- الامتحانات-->
         <li>
-            <a href="#"><i class="fas fa-book-open"></i><span
+            <a href="{{route('student_exam.index')}}"><i class="fas fa-book-open"></i><span
                     class="right-nav-text">{{ trans('main-translation.Exams') }}</span></a>
         </li>
-{{-- //{{route('student_exam.index')}} --}}
 
         <!-- Settings-->
         <li>

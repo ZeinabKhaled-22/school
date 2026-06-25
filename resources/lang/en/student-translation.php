@@ -46,6 +46,8 @@ return [
     'end_date' => 'end date',
     'to_date' => 'to date',
     'date' => 'Date',
-    'status' => 'Status'
+    'status' => 'Status',
+    'hello' => 'Hello'
+
 
 ];

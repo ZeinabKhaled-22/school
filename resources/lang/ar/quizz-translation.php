@@ -24,7 +24,15 @@ return [
    'delete_quizz' => 'حذف اختبار',
    'close' => 'اغلاق',
    'score' => 'درجة الاختبار',
-   'show_quizz' => 'اجراء اختبار'
+   'show_quizz' => 'اجراء اختبار',
+   'list_quizz_student' => 'قائمة الطلاب المختبرة',
+   'student_name' => 'اسم الطالب',
+   'last_question' => 'اخر سؤال',
+   'date_quizz' => 'تاريخ اجراء الاختبار',
+   'manipulation' => 'تلاعب',
+   'no_manipulation' => 'لا يوجد تلاعب',
+   'yes_manipulation' => 'يوجد تلاعب',
+   'open_quizz' => 'اعادة فتح الاختبار'
 
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\teacher\dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\Classroom;
+use App\Models\Degree;
 use App\Models\Grade;
 use App\Models\Question;
 use App\Models\Quizz;
@@ -108,6 +109,21 @@ class QuizzDashboardController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
+    }
+
+
+    public function studentQuizz($quizze_id){
+        $degrees = Degree::where('quizz_id',$quizze_id)->get();
+        return view('teachers.dashboard.quizz.student-quizz',compact('degrees'));
+
+    }
+
+
+    public function repeatQuizz(Request $request){
+        Degree::where('student_id',$request->student_id)->where('quizz_id',$request->quizz_id)->delete();
+        toastr()->success(trans('message.success_repeat_quizz'));
+        return redirect()->back();
+
     }
 
 

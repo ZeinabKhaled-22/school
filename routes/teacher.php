@@ -52,8 +52,8 @@ Route::group(
    
      Route::get('profile', [ProfileController::class,'index'])->name('profile.show');
      Route::post('profile/{id}', [ProfileController::class,'update'])->name('profile.update');
-    //  Route::get('student_quizze/{id}','QuizzController@student_quizze')->name('student.quizze');
-    //  Route::post('repeat_quizze', 'QuizzController@repeat_quizze')->name('repeat.quizze');
+     Route::get('student_quizz/{id}',[QuizzDashboardController::class,'studentQuizz'])->name('student.quizz');
+     Route::post('repeat_quizz', [QuizzDashboardController::class,'repeatQuizz'])->name('repeat.quizz');
 
 
     });

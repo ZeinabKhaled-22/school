@@ -23,7 +23,16 @@ return [
    'close' => 'Close',
    'select_subject' => 'select subject',
    'score' => 'score',
-   'show_quizz' => 'show quizz'
+   'show_quizz' => 'show quizz',
+   'list_quizz_student' => 'list student quizz',
+   'student_name' => 'Student Name',
+   'last_question' => 'Last question',
+   'date_quizz' => 'date quizz',
+   'manipulation' => 'manipulation',
+   'no_manipulation' => 'No manipulation',
+   'yes_manipulation' => 'Yes manipulation',
+   'open_quizz' => 'repeat opened the quizz'
+
 
 
 

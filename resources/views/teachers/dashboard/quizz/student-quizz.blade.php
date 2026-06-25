@@ -1,16 +1,16 @@
 @extends('layouts.master')
 @section('css')
     @toastr_css
-@section('title')
-    {{ trans('quizz-translation.list_quizz') }}
-@stop
+    @section('title')
+        {{ trans('quizz-translation.list_quizz_student') }}
+    @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
-@section('PageTitle')
-    {{ trans('quizz-translation.list_quizz') }}
-@stop
-<!-- breadcrumb -->
+    @section('PageTitle')
+        {{ trans('quizz-translation.list_quizz_student') }}
+    @stop
+    <!-- breadcrumb -->
 @endsection
 @section('content')
     <!-- row -->
@@ -21,8 +21,6 @@
                     <div class="col-xl-12 mb-30">
                         <div class="card card-statistics h-100">
                             <div class="card-body">
-                                <a href="{{route('quizzes.create')}}" class="btn btn-success btn-sm" role="button"
-                                   aria-pressed="true">{{ trans('quizz-translation.add_quizz') }}</a><br><br>
                                 <div class="table-responsive">
                                     <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
                                            data-page-length="50"
@@ -30,69 +28,61 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>{{ trans('quizz-translation.name') }}</th>
-                                            <th>{{ trans('quizz-translation.teacher_name') }}</th>
-                                            <th>{{ trans('quizz-translation.grade_name') }}</th>
-                                            <th>{{ trans('quizz-translation.class_name') }}</th>
-                                            <th>{{ trans('quizz-translation.section_name') }}</th>
+                                            <th>{{ trans('quizz-translation.student_name') }}</th>
+                                            <th>{{ trans('quizz-translation.last_question') }}</th>
+                                            <th>{{ trans('quizz-translation.score') }}</th>
+                                            <th>{{ trans('quizz-translation.manipulation') }}</th>
+                                            <th>{{ trans('quizz-translation.date_quizz') }}</th>
                                             <th>{{ trans('quizz-translation.processes') }}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($quizzes as $quizze)
+                                        @foreach($degrees as $degree)
                                             <tr>
                                                 <td>{{ $loop->iteration}}</td>
-                                                <td>{{$quizze->name}}</td>
-                                                <td>{{$quizze->teacher->name}}</td>
-                                                <td>{{$quizze->grade->name}}</td>
-                                                <td>{{$quizze->classroom->name}}</td>
-                                                <td>{{$quizze->section->name}}</td>
+                                                <td>{{$degree->student->name}}</td>
+                                                <td>{{$degree->question_id}}</td>
+                                                <td>{{$degree->score}}</td>
+                                                @if($degree->abuse == 0)
+                                                    <td style="color: green">{{ trans('quizz-translation.no_manipulation') }}</td>
+                                                @else
+                                                    <td style="color: red">{{ trans('quizz-translation.yes_manipulation') }}</td>
+                                                @endif
+                                                <td>{{$degree->date}}</td>
                                                 <td>
-                                                    <a href="{{route('quizzes.edit',$quizze->id)}}"
-                                                       class="btn btn-info btn-sm" role="button" aria-pressed="true"><i
-                                                            class="fa fa-edit"></i></a>
-                                                    <button type="button" class="btn btn-danger btn-sm"
+                                                    <button type="button" class="btn btn-info btn-sm"
                                                             data-toggle="modal"
-                                                            data-target="#delete_exam{{ $quizze->id }}" title="حذف"><i
-                                                            class="fa fa-trash"></i></button>
-                                                    <a href="{{route('quizzes.show',$quizze->id)}}"
-                                                       class="btn btn-warning btn-sm" title="عرض الاسئلة" role="button" aria-pressed="true"><i
-                                                            class="fa fa-binoculars"></i></a>
-
-                                                    <a href="{{route('student.quizz',$quizze->id)}}"
-                                                       class="btn btn-primary btn-sm" title="عرض الطلاب المختبرين" role="button" aria-pressed="true"><i
-                                                            class="fa fa-street-view"></i></a>
-
-
-
+                                                            data-target="#repeat_quizze{{ $degree->quizz_id }}" title="إعادة">
+                                                        <i class="fas fa-repeat"></i></button>
                                                 </td>
                                             </tr>
 
-                                            <div class="modal fade" id="delete_exam{{$quizze->id}}" tabindex="-1"
+                                            <div class="modal fade" id="repeat_quizze{{$degree->quizz_id}}" tabindex="-1"
                                                  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
-                                                    <form action="{{route('quizzes.destroy',$quizze->id)}}" method="post">
-                                                        {{method_field('delete')}}
+                                                    <form action="{{route('repeat.quizz', $degree->quizz_id)}}" method="post">
+                                                        {{method_field('post')}}
                                                         {{csrf_field()}}
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h5 style="font-family: 'Cairo', sans-serif;"
-                                                                    class="modal-title" id="exampleModalLabel">{{ trans('quizz-translation.delete_quizz') }}</h5>
+                                                                    class="modal-title" id="exampleModalLabel">{{ trans('quizz-translation.open_quizz') }}</h5>
                                                                 <button type="button" class="close" data-dismiss="modal"
                                                                         aria-label="Close">
                                                                     <span aria-hidden="true">&times;</span>
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <p> {{ trans('quizz-translation.warning_quizz') }} {{$quizze->name}}</p>
-                                                                <input type="hidden" name="id" value="{{$quizze->id}}">
+                                                                <h6>{{$degree->student->name}}</h6>
+                                                                <input type="hidden" name="student_id" value="{{$degree->student_id}}">
+                                                                <input type="hidden" name="quizz_id" value="{{$degree->quizz_id}}">
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary"
                                                                             data-dismiss="modal">{{ trans('quizz-translation.close') }}</button>
                                                                     <button type="submit"
-                                                                            class="btn btn-danger">{{ trans('quizz-translation.submit') }}</button>
+                                                                            class="btn btn-info">{{ trans('quizz-translation.submit') }}</button>
                                                                 </div>
                                                             </div>
                                                         </div>

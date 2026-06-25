@@ -52,7 +52,15 @@ return [
     'name_student' => 'Student Name',
     'name_quizz' => 'Quizz Name',
     'score' => 'Score',
-    'date_quizz' => 'Date of quizz'
+    'date_quizz' => 'Date of quizz',
+    'profile' => 'profile',
+    'parent' => 'parent',
+    'appear_password' => 'appear password',
+    'update' => 'update'
+
+
+
+
 
 
 ];

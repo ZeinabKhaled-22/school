@@ -8,5 +8,6 @@ return [
     'sucess_quizz' => 'تم اجراء الاختبار بنجاح',
     'success_repeat_quizz' => 'تم فتح الاختبار مرة اخرى للطالب',
     'error_student_code' => 'يوجد خطأ في كود الطالب',
-    'error_student_result' => 'لا توجد نتائج لهذا الطالب'
+    'error_student_result' => 'لا توجد نتائج لهذا الطالب',
+    'error_fees' => 'لا توجد مدفوعات لهذا الطالب'
 ];

@@ -8,5 +8,9 @@ return [
     'fee_type' => 'Fee Type',
     'amount' => 'Amount',
     'empty' => 'empty',
-    'created_at' => 'created at'
+    'created_at' => 'created at',
+    'fee_invoices' => 'fee invoices',
+    'name' => 'Name',
+    'description' => 'Description',
+    'proccess' => 'proccess'
 ];

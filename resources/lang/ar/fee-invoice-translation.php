@@ -8,6 +8,11 @@ return [
     'fee_type' => 'نوع الرسوم',
     'amount' => 'المبلغ',
     'empty' => 'لا توجد بيانات',
-    'created_at' => 'تاريخ الاضافة'
+    'created_at' => 'تاريخ الاضافة',
+    'fee_invoices' => 'الفواتير الدراسية',
+    'name' => 'الاسم',
+    'description' => 'البيان',
+    'proccess' => 'العمليات',
+    'receipt' => 'سندات القبض'
     
 ];

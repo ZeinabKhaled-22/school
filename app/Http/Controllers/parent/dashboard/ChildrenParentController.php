@@ -5,6 +5,8 @@ namespace App\Http\Controllers\parent\dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Attendance;
 use App\Models\Degree;
+use App\Models\FeeInvoice;
+use App\Models\ReceiptStudent;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -73,6 +75,36 @@ class ChildrenParentController extends Controller
             return view('parents.dashboard.attendence.index', compact('Students', 'students'));
 
         }
+
+    }
+
+
+
+
+    public function fees(){
+        $students_ids = Student::where('parent_id', auth()->user()->id)->pluck('id');
+        $Fee_invoices = FeeInvoice::whereIn('student_id',$students_ids)->get();
+        return view('parents.dashboard.fee.index', compact('Fee_invoices'));
+
+    }
+
+
+
+     public function receiptStudent($id){
+
+        $student = Student::findorFail($id);
+        if ($student->parent_id !== auth()->user()->id) {
+            toastr()->error(trans('message.error_student_code'));
+            return redirect()->route('sons.fees');
+        }
+
+        $receipt_students = ReceiptStudent::where('student_id',$id)->get();
+
+        if ($receipt_students->isEmpty()) {
+            toastr()->error(trans('message.error_fees'));
+            return redirect()->route('sons.fees');
+        }
+        return view('parents.dashboard.receipt.index', compact('receipt_students'));
 
     }
 }

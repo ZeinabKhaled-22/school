@@ -30,21 +30,18 @@
                                         <thead>
                                         <tr class="alert-success">
                                             <th>#</th>
-                                            <th>الاسم</th>
-                                            {{-- <th>نوع الرسوم</th> --}}
-                                            <th>المبلغ</th>
-                                            <th>المرحلة الدراسية</th>
-                                            <th>الصف الدراسي</th>
-                                            <th>الملاحظات</th>
-                                            <th>العمليات</th>
+                                            <th>{{ trans('fee-translation.name') }}</th>
+                                            <th>{{ trans('fee-translation.amount') }}</th>
+                                            <th>{{ trans('fee-translation.grade') }}</th>
+                                            <th>{{ trans('fee-translation.classroom') }}</th>
+                                            <th>{{ trans('fee-translation.description') }}</th>
+                                            <th>{{ trans('fee-translation.proccess') }}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         @foreach($fees as $fee)
                                             <tr>
                                             <td>{{ $fee->id }}</td>
-                                            {{-- <td>{{$fee->student->name}}</td> --}}
-                                            {{-- <td>{{$fee->fees->title}}</td> --}}
                                             <td>{{ $fee->title }}</td>
                                             <td>{{ number_format($fee->amount, 2) }}</td>
                                             <td>{{$fee->grade->name}}</td>

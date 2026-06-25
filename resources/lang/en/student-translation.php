@@ -47,7 +47,9 @@ return [
     'to_date' => 'to date',
     'date' => 'Date',
     'status' => 'Status',
-    'hello' => 'Hello'
+    'hello' => 'Hello',
+    'profile' => 'Profile',
+    'appear_password' => 'appear password'
 
 
 ];

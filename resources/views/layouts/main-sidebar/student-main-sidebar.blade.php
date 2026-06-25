@@ -21,9 +21,9 @@
 
         <!-- Settings-->
         <li>
-            <a href="#"><i class="fas fa-id-card-alt"></i><span
+            <a href="{{route('profile_student.index')}}"><i class="fas fa-id-card-alt"></i><span
                     class="right-nav-text">{{ trans('main-translation.profile') }}</span></a>
         </li>
-{{-- {{route('profile-student.index')}} --}}
+
     </ul>
 </div>

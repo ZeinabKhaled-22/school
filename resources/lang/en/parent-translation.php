@@ -39,7 +39,20 @@ return [
     'attachments' => 'Attachments',
     'processes' => 'Processes',
     'created_at' => 'created at',
-    'empty' => 'empty'
+    'empty' => 'empty',
+
+
+    'hello' => 'hello',
+    'information_student' => 'information of student',
+    'grade' => 'grade',
+    'classroom' => 'classroom',
+    'section' => 'section',
+    'list_sons' => 'List sons',
+    'list_result_sons' => 'List results of sons',
+    'name_student' => 'Student Name',
+    'name_quizz' => 'Quizz Name',
+    'score' => 'Score',
+    'date_quizz' => 'Date of quizz'
 
 
 ];

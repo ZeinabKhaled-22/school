@@ -18,25 +18,25 @@
             <a href="{{route('sons.index')}}"><i class="fas fa-book-open"></i><span
                     class="right-nav-text">{{ trans('main-translation.son') }}</span></a>
         </li>
-
+        
         <!-- تقرير الحضور والغياب-->
         <li>
-            <a href="{{route('sons.attendances')}}"><i class="fas fa-book-open"></i><span
+            <a href="#"><i class="fas fa-book-open"></i><span
                     class="right-nav-text">{{ trans('main-translation.Attendance') }}</span></a>
         </li>
-
+{{-- {{route('sons.attendances')}} --}}
         <!-- تقرير المالية-->
         <li>
-            <a href="{{route('sons.fees')}}"><i class="fas fa-book-open"></i><span
+            <a href="#"><i class="fas fa-book-open"></i><span
                     class="right-nav-text">{{ trans('main-translation.report_fee') }}</span></a>
         </li>
 
-
+{{-- {{route('sons.fees')}} --}}
         <!-- Settings-->
         <li>
-            <a href="{{route('profile.show.parent')}}"><i class="fas fa-id-card-alt"></i><span
+            <a href="#"><i class="fas fa-id-card-alt"></i><span
                     class="right-nav-text">{{ trans('main-translation.profile') }}</span></a>
         </li>
-
+{{-- {{route('profile.show.parent')}} --}}
     </ul>
 </div>

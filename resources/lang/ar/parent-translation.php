@@ -43,6 +43,19 @@ return [
     'attachments' => 'المرفقات',
     'processes' => 'العمليات',
     'created_at' => 'تاريخ الاضافة',
-    'empty' => 'لا توجد بيانات'
+    'empty' => 'لا توجد بيانات',
+
+
+    'hello' => 'مرحبا بك',
+    'information_student' => 'معلومات الطالب',
+    'grade' => 'المرحلة',
+    'classroom' => 'الصف',
+    'section' => 'القسم',
+    'list_sons' => 'قائمة الابناء',
+    'list_result_sons' => 'قائمة نتائج الاختبارات',
+    'name_student' => 'اسم الطالب',
+    'name_quizz' => 'اسم الاختبار',
+    'score' => 'الدرجة',
+    'date_quizz' => 'تاريخ اجراء الامتحان'
 
 ];

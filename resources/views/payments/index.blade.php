@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
 @section('title')
-    سندات الصرف
+    {{ trans('payment-translation.payment') }}
 @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
 @section('PageTitle')
-   سندات الصرف
+   {{trans('payment-translation.payment')}}
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -28,10 +28,10 @@
                                         <thead>
                                         <tr class="alert-success">
                                             <th>#</th>
-                                            <th>الاسم</th>
-                                            <th>المبلغ</th>
-                                            <th>البيان</th>
-                                            <th>العمليات</th>
+                                            <th>{{trans('payment-translation.name')}}</th>
+                                            <th>{{trans('payment-translation.amount')}}</th>
+                                            <th>{{trans('payment-translation.description')}}</th>
+                                            <th>{{trans('payment-translation.proccess')}}</th>
                                         </tr>
                                         </thead>
                                         <tbody>

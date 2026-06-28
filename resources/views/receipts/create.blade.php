@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
 @section('title')
-   سند قبض
+   {{ trans('receipt-translation.receipt') }}
 @stop
 @endsection
 @section('page-header')
-   <h3> سند قبض {{$student->name}}</h3>
+   <h3> {{ trans('receipt-translation.receipt') }}  {{$student->name}}</h3>
 @section('PageTitle')
-سند قبض {{$student->name}}
+{{ trans('receipt-translation.receipt') }}  {{$student->name}}
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -34,7 +34,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>المبلغ : <span class="text-danger">*</span></label>
+                                        <label>{{trans('receipt-translation.amount')}} : <span class="text-danger">*</span></label>
                                         <input  class="form-control" name="debit" type="number" >
                                         <input  type="hidden" name="student_id"  value="{{$student->id}}" class="form-control">
                                         <input  type="hidden" name="grade_id"  value="{{$student->grade_id}}" class="form-control">
@@ -47,7 +47,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>البيان : <span class="text-danger">*</span></label>
+                                        <label>{{trans('receipt-translation.description')}}  : <span class="text-danger">*</span></label>
                                         <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
                                     </div>
                                 </div>

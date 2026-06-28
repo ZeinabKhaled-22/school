@@ -12,5 +12,15 @@ return [
     'fee_invoices' => 'fee invoices',
     'name' => 'Name',
     'description' => 'Description',
-    'proccess' => 'proccess'
+    'proccess' => 'proccess',
+    'receipt' => 'Receipt',
+    'add_invoices' => 'Add Invoices',
+    'warning_fee' => 'Are Sure Of The Deleting Process ?',
+    'edit_fee' =>'Edit Fee',
+    'add_fee' => 'Add Fee',
+    'name_ar' => 'Name Ar',
+    'name_en' => 'Name En',
+    'year' => 'Year',
+    'fee_school' => 'Fee School',
+    'fee_bus' => 'Fee bus'
 ];
